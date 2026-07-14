@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.16.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Dialog</title>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="Reference section for all the Dialog functions"/>
+  <meta name="rh-index-keywords" content="Dialog"/>
+  <meta name="search-keywords" content="Dialog,Dialogue"/>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/Dialog/get_login_async.htm"/><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"/></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Dialog">
+        <span>Dialog</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">Dialog</span></h1>
+  <p>Most modern computers and mobile devices do not like it when a game is stopped while a dialog window is shown. They tend to interpret this as game runner having stopped, and may consider it an error and close the app prematurely. To prevent this <span data-keyref="GameMaker Name">GameMaker</span> has <strong>asynchronous</strong> dialog functions that permit you to request certain forms of user feedback or input, but without blocking the game runner at any time, meaning that - when called - the game will run as normal in the background while the user responds to the shown dialog window (with the exception of the GX.games target). Once the user has responded, a <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">Dialog Asynchronous Event</a> will be called so that you can deal with the results.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> With the exception of <span class="inline3_func"><a href="shop_leave_rating.htm">shop_leave_rating</a></span>, these functions are <span data-keyref="Dialog for debug only">for <strong>debugging and testing use only</strong> and should not be used in released games on desktop, web and mobile targets. For that purpose you should create a custom user interface to receive input from players so that you have complete control over how the dialogs look and behave. On consoles, the system UI is used to show dialogs instead.</span></p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> These functions don&#39;t work in regular fullscreen mode on Windows as your game &quot;owns&quot; the entire screen. You can use them with borderless fullscreen instead, see <span class="inline3_func"><a href="../../Cameras_And_Display/The_Game_Window/window_enable_borderless_fullscreen.htm">window_enable_borderless_fullscreen</a></span>.</p>
+  <p>Below is a list of all the available asynchronous dialog functions:</p>
+  <ul class="colour">
+    <li><a href="get_login_async.htm">get_login_async</a></li>
+    <li><a href="get_string_async.htm">get_string_async</a></li>
+    <li><a href="get_integer_async.htm">get_integer_async</a></li>
+    <li><a href="show_message_async.htm">show_message_async</a></li>
+    <li><a href="show_question_async.htm">show_question_async</a></li>
+    <li><a href="shop_leave_rating.htm">shop_leave_rating</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Asynchronous_Functions.htm">Asynchronous Functions</a></div>
+        <div style="float:right">Next: <a href="../Cloud_Saving/Cloud_Saving.htm">Cloud Saving</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2026 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Dialog Functions
+-->
+  <!-- TAGS
+dialog_functions
+-->
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1ae5a6699492830',t:'MTc4NDAwOTMwOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

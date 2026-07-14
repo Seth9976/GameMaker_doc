@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.10.0_15";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>font_add_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css"/>
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="Page outlining the function font_add_sprite_ext"/>
+  <meta name="rh-index-keywords" content="font_add_sprite_ext"/>
+  <meta name="search-keywords" content="font_add_sprite_ext"/>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_replace_sprite.htm"/><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_add_sprite.htm"/></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="font_add_sprite_ext">
+        <span>font_add_sprite_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">font_add_sprite_ext</span></h1>
+  <p>With this function you can use a <a href="../../../../The_Asset_Editors/Sprite_Properties/Sprite_Strips.htm">sprite strip</a> (the sprite itself <b>must</b> be a sprite asset from <a href="../../../../Introduction/The_Asset_Browser.htm">The Asset Browser</a>, or a sprite you have added to the game assets using <span class="inline3_func"><a href="../Sprites/Sprite_Manipulation/sprite_add.htm">sprite_add</a></span>) to create a new font asset, where each sub-image would be an individual symbol or letter. Unlike the normal <span class="inline3_func"><a href="font_add_sprite.htm">font_add_sprite</a></span> which has a specific order for the sub-images of the sprite, this function will map the sprite sub-images based on the function&#39;s <span class="inline2">string_map</span> argument. This argument is a string that you can use to tell <span data-keyref="GameMaker Name">GameMaker</span> what order the sub-images of the sprite font are and it will map these automatically when writing text. So, for example, if you have a string-map of <span class="inline2">&quot;AaBbCcDdEeFfGgHh&quot;</span>, your sprite font <i>must</i> have the sub-images ordered in this way. You can define &quot;space&quot; as being any character you want, for example a single line the size that you want the space to be, and all spaces in text will be rendered at that width (but the image chosen will <i>never</i> be rendered), or if you don&#39;t supply a sprite for space then the width of the widest character in the sprite font will be used instead.</p>
+  <p>You can also set the spacing for the font to be proportional (<span class="inline2">true</span>) or not (<span class="inline2">false</span>), where a proportional font is spaced based on the actual width of the letters (so the letter &quot;i&quot; takes less room than the letter &quot;w&quot;, for example) while a non-proportional font will be spaced based on the sub-image width, like a monospaced font. Finally, you can define the space to leave between each letter when writing, and this can be any integer value, with 0 being no space (the letters will &quot;touch&quot; if proportional).</p>
+  <div data-conref="../../../../assets/snippets/Note_font_add_sprite_prop.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> The <span class="inline2">prop</span> argument only works if the given sprite was added to the project through the IDE and not <a href="../Sprites/Sprite_Manipulation/sprite_add.htm">generated at runtime</a>. For sprites added at runtime, this will default to <span class="inline2">false</span> and will result in a monospaced font.</p>
+
+</div>
+  <p>The function returns a handle that should be stored in a variable as this will be needed in all further codes that refer to this font. <span data-conref="../../../../assets/snippets/Note_font_add_invalid_handle.hts">An invalid handle (-1) will be returned by the function if it fails for any reason.</span></p>
+  <p>It is worth noting that for the font alignment functions to work (like <span class="inline3_func"><a href="../../Drawing/Text/draw_set_halign.htm">draw_set_halign</a></span>) then the font sprite should have its origin set to the <i>top left corner</i>. If you use other values then you will need to take the origin offset into consideration when drawing text using the font.</p>
+  <div data-conref="../../../../assets/snippets/Note_Font_Remove_With_font_delete.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> When you load a font into <span data-keyref="GameMaker Name">GameMaker</span> you must remember to remove it again (with <span class="inline3_func"><a href="font_delete.htm">font_delete</a></span>) when no longer needed, otherwise there is risk of a memory leak which will slow down and eventually crash your game.</p>
+
+</div>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span data-field="title" data-format="default">font_add_sprite_ext</span>(spr, string_map, prop, sep)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>The sprite to add a font based on.</td>
+      </tr>
+      <tr>
+        <td>string_map</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>String from which sprite sub-image order is taken.</td>
+      </tr>
+      <tr>
+        <td>prop</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>Set as proportional font or not.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>The space to leave between each letter.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Returns:</h4>
+  <p class="code"><span data-keyref="Type_Asset_Font"><a target="_blank" href="../../../../The_Asset_Editors/Fonts.htm">Font Asset</a></span></p>
+  <p> </p>
+  <h4>Example:</h4>
+  <p class="code">global.font = font_add_sprite_ext(spr_CalcFont, &quot;0123456789+-*/=&quot;, true, 2);</p>
+  <p>The above code will create a new font asset from the sprite indexed in the variable <span class="inline2">spr_CalcFont</span> and store the handle of the new font in the variable <span class="inline2">global.font</span>. The sub-images of the sprite font will be mapped to the string specified.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Fonts.htm">Fonts</a></div>
+        <div style="float:right">Next: <a href="font_replace_sprite.htm">font_replace_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2026 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add_sprite_ext
+-->
+  <!-- TAGS
+font_add_sprite_ext
+-->
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1ae8bcc2ff2273b',t:'MTc4NDAxMTMzMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

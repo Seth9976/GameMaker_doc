@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.10.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>particle_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/>
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content=""/>
+  <meta name="topic-comment" content=""/>
+  <meta name="rh-index-keywords" content="particle_delete"/>
+  <meta name="search-keywords" content="particle_delete"/>
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt"/>
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="particle_delete">
+        <span>particle_delete</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">particle_delete</span></h1>
+  <p>This function deletes a particle system asset, freeing the memory used by it.</p>
+  <p>The function can delete both particle system assets created at runtime using <span class="inline3_func"><a href="particle_add.htm">particle_add</a></span> and assets created in the IDE. Deleting a particle system asset created at runtime also destroys the particle types owned by it.</p>
+  <p> </p>
+  <h4>Syntax:</h4>
+  <p class="code"><span data-field="title" data-format="default">particle_delete</span>(ind)</p>
+  <table>
+    <colgroup>
+      <col/>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../The_Asset_Editors/Particle_Systems.htm">Particle System Asset</a></span></td>
+        <td>The particle system asset to delete</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Returns:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p> </p>
+  <h4>Example:</h4>
+  <div data-conref="../../../../assets/snippets/Example_Particle_Asset_Add_Delete.hts">
+  <p class="code_heading">Create Event</p>
+  <p class="code">var _info = particle_get_info(ps_fountain);<br/>
+    <br/>
+    var _type_info = _info.emitters[0].parttype;<br/>
+    _type_info.color1 = c_aqua;<br/>
+    _type_info.color2 = c_blue;<br/>
+    _type_info.color3 = c_white;<br/>
+    _type_info.alpha1 = 1.0;<br/>
+    _type_info.alpha2 = 0.3;<br/>
+    _type_info.alpha3 = 0.0;<br/>
+    <br/>
+    ps_fountain_bright = particle_add(_info);<br/>
+    <br/>
+    ps_instance = part_system_create_layer(&quot;Particles&quot;, ps_fountain_bright);
+  </p>
+  <p class="code_heading">Clean Up Event</p>
+  <p class="code">part_system_destroy(ps_instance);<br/>
+    particle_delete(ps_fountain_bright);</p>
+  <p>The code above shows how to add a particle system asset at runtime, create an instance of it and free the instance and asset afterwards.</p>
+  <p>First, an existing asset&#39;s info is obtained with <span class="inline3_func"><a href="particle_get_info.htm">particle_get_info</a></span>. Then, the first emitter&#39;s particle type info struct is stored in a temporary variable and its three colour and alpha values are modified. A new asset is then created from the info in the struct using <span class="inline3_func"><a href="particle_add.htm">particle_add</a></span> and a new particle system instance is created from that asset using <span class="inline3_func"><a href="Particle_Systems/part_system_create_layer.htm">part_system_create_layer</a></span>. Both the particle system instance and asset are cleaned up afterwards with a call to <span class="inline3_func"><a href="Particle_Systems/part_system_destroy.htm">part_system_destroy</a></span> and <span class="inline3_func"><a href="particle_delete.htm">particle_delete</a></span> respectively.</p>
+
+</div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back: <a href="Particles.htm">Particles</a></div>
+        <div>Next: <a href="effect_create_depth.htm">effect_create_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2026 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+particle_delete
+-->
+  <!-- TAGS
+particle_delete
+-->
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1adf219df87c126',t:'MTc4NDAwNTAzNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

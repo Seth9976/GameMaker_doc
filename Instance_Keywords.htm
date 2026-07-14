@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "8.2.1.3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Instance Keywords</title>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css"/>
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander"/>
+  <meta name="topic-comment" content="Page outlining the different instance &quot;keywords&quot;"/>
+  <meta name="rh-index-keywords" content="Instance Keywords,noone,self,other,all"/>
+  <meta name="search-keywords" content="self,all,noone,other,instance keywords"/>
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Evaluation_Order.htm"/><meta name="brsprev" value="GameMaker_Language/GML_Overview/Commenting_Code.htm"/></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Instance Keywords">
+        <span>Instance Keywords</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">Instance Keywords</span></h1>
+  <p>To make certain things easier in <span data-keyref="GameMaker Name">GameMaker</span>, you can use one of several <b>instance keywords</b> in your code (whether <span data-keyref="GML_Code">GML Code</span> or <span data-keyref="GML_Visual">GML Visual</span>). These keywords are used to identify instances and structs.</p>
+  <ul class="colour">
+    <li><a href="Instance Keywords/self.htm">self</a></li>
+    <li><a href="Instance Keywords/other.htm">other</a></li>
+    <li><a href="Instance Keywords/all.htm">all</a></li>
+    <li><a href="Instance Keywords/noone.htm">noone</a></li>
+  </ul>
+  <h2 id="h">Legacy Values</h2>
+  <p>These variables have historically stored negative integer values which helps <span data-keyref="GameMaker Name">GameMaker</span> identify which keyword is being used. This is referenced in the following table:</p>
+  <table style="width: 616.5px;">
+    <colgroup>
+      <col/>
+      <col/>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th style="">Variable</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td style=""><strong>self</strong></td>
+        <td>-1</td>
+      </tr>
+      <tr>
+        <td style=""><strong>other</strong></td>
+        <td>-2</td>
+      </tr>
+      <tr>
+        <td style=""><strong>all</strong></td>
+        <td>-3</td>
+      </tr>
+      <tr>
+        <td style=""><strong>noone</strong></td>
+        <td>-4</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Due to compatibility reasons, these variables still refer to these values before the actual struct or instance it refers to is resolved. These values may appear in some cases, e.g. converting <span class="inline2">self</span> into a <a href="../GML_Reference/Strings/string.htm">string</a> will result in <span class="inline2">&quot;-1&quot;</span> and inversely, using <span class="inline2">-1</span> in places where a scope is expected will refer to <span class="inline2">self</span>.</p>
+  <p>This can be seen in a <span class="inline3_func"><a href="Language_Features/with.htm">with</a></span> block, where if you pass <span class="inline2">-1</span> the block is executed on <span class="inline2">self</span>. This may be unintentional when a <a href="Data_Types.htm">Handle</a> is passed with a value of <span class="inline2">-1</span>, where the expectation would be the <span class="inline3_func"><a href="Language_Features/with.htm">with</a></span> block not executing however it executes on <span class="inline2">self</span> due to this legacy behaviour.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">IMPORTANT</span></span> You <strong>should not</strong> use the numeric values of these keywords directly, always reference each keyword by its name.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="GML_Overview.htm">GML Overview</a></div>
+        <div style="float:right">Next: <a href="Evaluation_Order.htm">Evaluation Order</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2026 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Instance Keywords
+-->
+  <!-- TAGS
+instance_keywords
+-->
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1ae69ea8c7dfcc9',t:'MTc4NDAwOTk0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

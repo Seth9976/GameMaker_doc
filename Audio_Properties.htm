@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.5.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
+  <meta name="topic-status" content="Draft"/>
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/><script src="../../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <title>Audio Properties Overview</title>
+  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/>
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis"/>
+  <meta name="topic-comment" content="A page to provide a quick overview on all the audio properties and the levels at which they can be set"/>
+  <meta name="template" content="../../../../assets/masterpages/Manual_Page.htt"/>
+  <meta name="search-keywords" content="audio,properties"/>
+  <meta name="rh-index-keywords" content="audio properties"/>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_exists.htm"/><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio.htm"/></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Audio Properties Overview">
+        <span>Audio Properties Overview</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1><span data-field="title" data-format="default">Audio Properties Overview</span></h1>
+  <p>This page gives a detailed overview of the audio properties that <span data-keyref="GameMaker Name">GameMaker</span> supports and the different &quot;levels&quot; at which you can set/change them.</p>
+  <p>The table below lists all applicable levels for the basic audio properties, and lists the functions you can use to set and get each property at each level.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Level</th>
+        <th style="">Gain</th>
+        <th style="">Pitch</th>
+        <th>Offset</th>
+        <th>Listener Mask</th>
+      </tr>
+      <tr>
+        <td>Asset</td>
+        <td style=""><a href="audio_sound_gain.htm">audio_sound_gain</a><br/>
+          <a href="audio_sound_get_gain.htm">audio_sound_get_gain</a>
+        </td>
+        <td style=""><a href="audio_sound_pitch.htm">audio_sound_pitch</a><br/>
+          <a href="audio_sound_get_pitch.htm">audio_sound_get_pitch</a>
+        </td>
+        <td><a href="audio_sound_set_track_position.htm">audio_sound_set_track_position</a><br/>
+          <a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a>
+        </td>
+        <td><em>N/A</em></td>
+      </tr>
+      <tr>
+        <td>Group</td>
+        <td style=""><a href="Audio_Groups/audio_group_set_gain.htm">audio_group_set_gain</a><br/>
+          <a href="Audio_Groups/audio_group_get_gain.htm">audio_group_get_gain</a>
+        </td>
+        <td style=""><em>N/A</em></td>
+        <td><em>N/A</em></td>
+        <td><em>N/A</em></td>
+      </tr>
+      <tr>
+        <td>Emitter</td>
+        <td style=""><a href="Audio_Emitters/audio_emitter_gain.htm">audio_emitter_gain</a><br/>
+          <a href="Audio_Emitters/audio_emitter_get_gain.htm">audio_emitter_get_gain</a>
+        </td>
+        <td style=""><a href="Audio_Emitters/audio_emitter_pitch.htm">audio_emitter_pitch</a><br/>
+          <a href="Audio_Emitters/audio_emitter_get_pitch.htm">audio_emitter_get_pitch</a>
+        </td>
+        <td><em>N/A</em></td>
+        <td><a href="Audio_Emitters/audio_emitter_set_listener_mask.htm">audio_emitter_set_listener_mask</a><br/>
+          <a href="Audio_Emitters/audio_emitter_get_listener_mask.htm">audio_emitter_get_listener_mask</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Instance/Voice</td>
+        <td style=""><a href="audio_sound_gain.htm">audio_sound_gain</a><br/>
+          <a href="audio_sound_get_gain.htm">audio_sound_get_gain</a><br/>
+          <a href="audio_play_sound.htm">audio_play_sound</a>, etc.
+        </td>
+        <td style=""><a href="audio_sound_pitch.htm">audio_sound_pitch</a><br/>
+          <a href="audio_sound_get_pitch.htm">audio_sound_get_pitch</a><br/>
+          <a href="audio_play_sound.htm">audio_play_sound</a>, etc.
+        </td>
+        <td><a href="audio_sound_set_track_position.htm">audio_sound_set_track_position</a><br/>
+          <a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a><br/>
+          <a href="audio_play_sound.htm">audio_play_sound</a>, etc.
+        </td>
+        <td><a href="audio_play_sound.htm">audio_play_sound</a>, etc.</td>
+      </tr>
+      <tr>
+        <td>Global/Listener</td>
+        <td style=""><a href="audio_master_gain.htm">audio_master_gain</a><br/>
+          <a href="audio_set_master_gain.htm">audio_set_master_gain</a><br/>
+          <a href="audio_get_master_gain.htm">audio_get_master_gain</a>
+        </td>
+        <td style=""><em>N/A</em></td>
+        <td><em>N/A</em></td>
+        <td><a href="Audio_Listeners/audio_set_listener_mask.htm">audio_set_listener_mask</a><br/>
+          <a href="Audio_Listeners/audio_get_listener_mask.htm">audio_get_listener_mask</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Result</td>
+        <td style="">G<sub>asset</sub> * G<sub>group</sub> * G<sub>emitter</sub> * G<sub>instance</sub></td>
+        <td style="">P<sub>asset</sub> * P<sub>emitter</sub> * P<sub>instance</sub> (might be clipped, see <a href="Audio_Properties.htm#pitch">Pitch</a>)</td>
+        <td>Asset-level offset unless instance-level offset is passed to the <span class="inline2">audio_play_sound_*</span> functions</td>
+        <td>M<sub>emitter</sub> &amp; M<sub>instance</sub> (bitwise AND, see <a href="../../../../Additional_Information/Bitwise_Operators.htm">Bitwise Operators</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <div data-conref="../../../../assets/snippets/Note_Audio_Device_OS_Might_Normalise_Audio.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> A<span>udio devices and/or operating systems can sometimes attempt to change the audio&#39;s amplitude <span>in order to protect the user from what would otherwise be very loud sounds</span>, for example by <span>normalising </span>the audio stream or by clipping the amplitude to 1. How this is handled is specific to the audio device or OS that&#39;s handling your game&#39;s audio. As a result, increasing gains might have an inconsistent effect.</span></p>
+
+</div>
+  <h2 id="notes">Notes</h2>
+  <h3 id="gain">Gain</h3>
+  <div data-conref="../../../../assets/snippets/Note_Sound_Editor_Volume_Is_Asset_Gain.hts">
+  <p>The default asset-level gain is the value of the &quot;Volume&quot; slider in <a href="../../../../The_Asset_Editors/Sounds.htm">The Sound Editor</a>: </p>
+  <p><img class="center" height="268" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Asset_Gain_IDE.png" width="432"/></p>
+
+</div>
+  <p>This can still be changed in-game later by calling <span class="inline2"><a href="audio_sound_gain.htm">audio_sound_gain</a></span> with the sound <em>asset</em> ID as the argument: </p>
+  <p class="code">audio_sound_gain(snd_Explode, 0, 0);  // Set the asset-level gain to 0 (new and existing instances of this sound are muted)</p>
+  <h3 id="pitch">Pitch</h3>
+  <p>The resulting <em>source</em> pitch has a lower limit of <span data-keyref="Const_Audio_Pitch_Min">1/256</span> (-8 octaves) for all sounds. It has an upper limit dependent on the compression type of the sound - uncompressed sounds have an upper limit of <span data-keyref="Const_Audio_Pitch_Max_Uncompressed">256</span> (+8 octaves), but compressed sounds have a limit of <span data-keyref="Const_Audio_Pitch_Max_Compressed">4</span> (+2 octaves).</p>
+  <p>If the source pitch is clipped, a warning message will be printed to the console. If the source pitch is clipped on the upper bound for a compressed sound, a note will also be printed to the console pointing out that they have a lower upper limit than uncompressed sounds.</p>
+  <p class="note" dir="auto"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> On HTML5, uncompressed sounds and compressed sounds have the same range of <span class="inline2"><span data-keyref="Const_Audio_Pitch_Min">1/256</span></span> to <span class="inline2"><span data-keyref="Const_Audio_Pitch_Max_HTML5">256</span></span>. Because of this, there is no specific warning for clipping a compressed sound on the upper bound.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back: <a href="Audio.htm">Audio</a></div>
+        <div>Next: <a href="audio_exists.htm">audio_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2026 All Rights Reserved</span></h5>
+  </div>
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1ae96c74da431a4',t:'MTc4NDAxMTc4Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
